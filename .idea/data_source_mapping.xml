@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/.idea/queries/Query.sql" value="345e9cf0-8592-4108-b082-0dbee5984174" />
+    <file url="file://$PROJECT_DIR$/.idea/queries/Query_1.sql" value="345e9cf0-8592-4108-b082-0dbee5984174" />
+    <file url="file://$PROJECT_DIR$/day02/src/main/java/com/xzit/mapper/TeacherMapper.java" value="345e9cf0-8592-4108-b082-0dbee5984174" />
+    <file url="file://$PROJECT_DIR$/day04/src/main/java/com/xzit/mapper/TeacherMapper.java" value="345e9cf0-8592-4108-b082-0dbee5984174" />
+  </component>
+</project>

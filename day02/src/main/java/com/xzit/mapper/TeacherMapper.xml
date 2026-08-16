@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzit.mapper.TeacherMapper">
+<insert id="insert" >
+    INSERT INTO mybatis.teacher(name, addr, age, job, sal)
+    VALUES
+        <foreach collection="List" item="item" separator=",">
+         (#{item.name},#{item.addr},#{item.age},#{item.job},#{item.sal})
+        </foreach>
+</insert>
+<select id="selectByAddr"  resultType="teacher">
+select  * from mybatis.teacher where addr like #{addr}
+</select>
+    <select id="selectAVGSal"  resultType="integer">
+        select  AVG(sal) from mybatis.teacher where addr like #{addr}
+    </select>
+</mapper>

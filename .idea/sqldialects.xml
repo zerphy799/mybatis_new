@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/.idea/queries/Query.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/.idea/queries/Query_1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/day01/src/main/java/com/xzit/mapper/TeacherMapper.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/day05/src/main/java/com/xzit/mapper/CompanyMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/day06/src/main/java/com/xzit/mapper/UserMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/first/src/main/resources/student_mapper.xml" dialect="GenericSQL" />
+  </component>
+</project>

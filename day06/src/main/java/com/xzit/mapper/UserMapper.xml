@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzit.mapper.UserMapper">
+    <update id="updateLastTime">
+        update mybatis.users set lasttime = #{now} where uid = #{uid}
+    </update>
+
+    <select id="login" resultType="user">
+        select *
+        from mybatis.users
+        where uname = #{uname}
+          and pwd = #{pwd}
+    </select>
+
+    <select id="findRolesByUid" resultType="role">
+        select distinct r.rid , r.rname from mybatis.users u join mybatis.users_role ur on u.uid = ur.uid join mybatis.role r ON ur.rid=r.rid
+        where u.uid= #{uid}
+    </select>
+
+</mapper>

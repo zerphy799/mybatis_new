@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzit.mapper.CompanyMapper">
+<insert id="insertList" >
+    insert into company(name, addr, age, job, sal) values
+   <foreach collection="list" item="com" separator=",">
+       (#{com.name},#{com.addr},#{com.age},#{com.job},#{com.sal})
+   </foreach>
+</insert>
+    <select id="selectByCity" parameterType="string" resultType="company" >
+        select * from company
+        <where>
+            <if test="addr!=null and addr!=''">
+         addr like concat('%',#{addr},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAvgSalByProvince" parameterType="String" resultType="Double">
+        select avg(sal) avg_sal from company
+        <where>
+            <if test="province != null and province != ''">
+                addr like concat('%',#{province},'%')
+            </if>
+        </where>
+    </select>
+
+    <update id="updateByCity" parameterType="company">
+        update company
+        <set>
+            <if test="sal != null">
+                sal = #{sal},
+            </if>
+            <if test="job != null and job != ''">
+                job = #{job},
+            </if>
+        </set>
+        where addr like concat('%',#{addr},'%')
+    </update>
+
+    <delete id="deleteByIds">
+        delete from company
+        where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
